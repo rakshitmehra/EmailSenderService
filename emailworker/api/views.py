@@ -11,7 +11,6 @@ def process_data(request):
         try:
             send_email.delay(data['email'],data['name'],data['url'],data['template'],data['subject'],data['company_name'],data['msg'])
         except Exception as e:
-            print(e)
-            return JsonResponse({"status":500,"message":"email not sent"})
+            return JsonResponse({"status":500,"message":"email not sent "})
     return JsonResponse({"status":200,"message":"email sent successfully"})
 
