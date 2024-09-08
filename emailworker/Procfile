@@ -1,0 +1,3 @@
+release: python manage.py migrate
+web: gunicorn emailworker.wsgi
+worker: celery -A emailworker worker --loglevel=info
