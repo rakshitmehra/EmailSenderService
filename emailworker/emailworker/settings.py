@@ -126,8 +126,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CELERY_BROKER_URL ='redis://default:aqowBQcHEyxEvMvjXdlSfrQEnJqRwmXX@redis.railway.internal:6379'
 # CELERY_RESULT_BACKEND ='django-db'
+
+CELERY_BROKER_URL = CELERY_RESULT_BACKEND ='redis://default:aqowBQcHEyxEvMvjXdlSfrQEnJqRwmXX@junction.proxy.rlwy.net:23134'
 CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
