@@ -125,13 +125,14 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CELERY_BROKER_URL ='redis://localhost:6379/0'
-CELERY_RESULT_BACKEND ='redis://localhost:6379/0'
-
+CELERY_BROKER_URL ='redis://default:aqowBQcHEyxEvMvjXdlSfrQEnJqRwmXX@redis.railway.internal:6379'
+CELERY_RESULT_BACKEND ='django-db'
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE= 'UTC'
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_PORT = 587
